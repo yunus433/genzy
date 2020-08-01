@@ -1,0 +1,83 @@
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.all-inner-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-name {
+  color: rgb(50, 50, 50);
+  font-weight: 800;
+  font-size: 200%;
+  margin-bottom: 5px;
+}
+.logo-subtitle {
+  font-weight: 500;
+  font-size: 150%;
+  color: rgb(50, 50, 50);
+  text-align: center;
+}
+
+.register-button {
+  height: 60px;
+  padding: 0px 40px;
+  background-color: rgb(111, 74, 193);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(111, 74, 193, 0.5);
+}
+.register-button:hover {
+  box-shadow: 0 0 23px rgba(111, 74, 193, 0.6);
+}
+.register-button span {
+  color: rgb(254, 254, 254);
+  font-weight: 700;
+  font-size: 150%;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+}
+.login-text {
+  color: rgb(50, 50, 50);
+  font-weight: 500;
+  font-size: 100%;
+}
+.login-link {
+  color: rgb(111, 74, 193);
+  font-weight: 700;
+  font-size: 100%;
+  margin-left: 5px;
+  text-decoration: none;
+}
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.bottom-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  min-height: fit-content;
+  width: 100%;
+}
+.copyright-text {
+  margin-right: 20px;
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+  font-size: 75%;
+}

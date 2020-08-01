@@ -1,0 +1,41 @@
+extends ./../partials/head
+block content
+  input.display-none#campaign-id-json(type="text" value=campaign._id.toString())
+  input.display-none#answers-json(type="text" value=JSON.stringify(campaign.answers))
+  .all-wrapper
+    .all-inner-wrapper
+      a.go-back-link(href="/history")
+        i.fas.fa-chevron-left
+        span Geri
+      span.test-title= campaign.name
+      span.test-info= campaign.description
+      each question, i in campaign.questions
+        .each-question
+          span.question-text= question.text
+          if question.type == 'short_text'
+            input.each-input(type="text" id=i placeholder="Cevabınız" value=campaign.answers[i])
+          else if question.type == 'long_text'
+            textarea.each-input-long(type="text" rows="5" id=i placeholder="Cevabınız")= campaign.answers[i]
+          else if question.type == 'radio'
+            each choice in question.choices
+              if choice == campaign.answers[i]
+                label.each-choice-wrapper
+                  input.each-choice-input(type="radio" name="question-" + i id=i value=choice checked)
+                  span.each-choice-text= choice
+              else
+                label.each-choice-wrapper
+                  input.each-choice-input(type="radio" name="question-" + i id=i value=choice)
+                  span.each-choice-text= choice
+          else if question.type == 'checked'
+            each choice in question.choices
+              if campaign.answers[i].includes(choice)
+                label.each-choice-wrapper
+                  input.each-choice-input(type="checkbox" id=i value=choice checked)
+                  span.each-choice-text= choice
+              else
+                label.each-choice-wrapper
+                  input.each-choice-input(type="checkbox"  id=i value=choice)
+                  span.each-choice-text= choice
+      .buttons-wrapper
+        button.save-button Kaydet
+        span.submit-button Gönder

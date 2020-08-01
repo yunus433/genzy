@@ -1,0 +1,59 @@
+extends ../../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title= campaign.name
+      span.subtitle Bu sayfadan bu kampanyayı düzenleyebilirsiniz.
+  form.new-form-wrapper(action="/admin/campaigns/details?id=" + campaign._id.toString() method="POST")
+    input.display-none#campaign-json(type="text" value=JSON.stringify(campaign))
+    .form-inner-wrapper
+      span.form-title Kampanyayı düzenle:
+      span.form-subtitle Kampanya İsmi: *
+      input.form-input(type="text" placeholder="İsim" value=campaign.name name="name" required)
+      span.form-subtitle Kampanya Açıklaması: *
+      input.form-input(type="text" placeholder="Açıklama" value=campaign.description name="description" required)
+      span.form-subtitle Kampanya Fiyatı: *
+      input.form-input(type="number" placeholder="Fiyat ₺" value=campaign.price name="price" required)
+      span.form-subtitle Kişi Sayısı: *
+      input.form-input(type="number" placeholder="Kişi Sayısı" value=campaign.participant_number name="participant_number" required)
+      span.form-subtitle Gereken Cinsiyet: (Yoksa boş bırakın)
+      input.form-input(type="text" placeholder="ör: kadın / erkek" value=(campaign.gender == "both" ? "" : campaign.gender) name="gender")
+      span.form-subtitle Min Doğum Yılı: (Yoksa boş bırakın)
+      input.form-input(type="number" placeholder="ör: 1920" value=campaign.min_birth_year name="min_birth_year")
+      span.form-subtitle Max Doğum Yılı: (Yoksa boş bırakın)
+      input.form-input(type="number" placeholder="ör: 2020" value=campaign.max_birth_year name="max_birth_year")
+      input.display-none#campaign-questions-input(type="text" value=JSON.stringify(campaign.questions) name="questions")
+      span.form-subtitle Kampanya Soruları
+      .questions-wrapper
+        each question in campaign.questions
+          .each-added-question
+            i.fas.fa-trash.question-delete-button(id=question._id)
+            span.question-info= question.text
+            span.question-info Soru Tipi: #{type_names[question.type]}
+            if question.choices && question.choices.length
+              each choice in question.choices
+                span.question-info - #{choice}
+      span.form-subtitle Soru Ekle:
+      .questions-wrapper
+        .each-question
+          span.form-subtitle Soru Metni
+          input.form-input#question-text-input(type="text" placeholder="Soru")
+          span.form-subtitle Soru Tipi
+          .type-wrapper
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="short_text")
+              span.each-radio-input-text Kısa Yazılı
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="long_text")
+              span.each-radio-input-text Uzun Yazılı
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="radio")
+              span.each-radio-input-text Tek Seçmeli
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="checked")
+              span.each-radio-input-text Çok Seçmeli
+          span.form-subtitle Cevaplar (Lütfen sadece soru tipiniz tek seçmeli ya da çok seçmeli ise girin. Cevapların arasına virgül koymanız gerekmektedir.)
+          input.form-input#question-choices-input(type="text" placeholder="ör: Cevap 1, Cevap 2, Cevap 3")
+        .add-question-button Soru Ekle
+      .buttons-wrapper
+        button.form-button Düzenle

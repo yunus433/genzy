@@ -1,0 +1,60 @@
+extends ../../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title= user.name
+      span.subtitle Bu sayfadan bu kullanıcının bilgilerini ve anket geçmişini görüntüleyebilirsiniz.
+  .all-content-inner-wrapper
+    .info-wrapper
+      span.content-main-title Kullanıcı Bilgileri:
+      span.content-title İsim:
+      span.content-info= user.name
+      span.content-title E-Posta:
+      span.content-info= user.email
+      span.content-title Cinsiyet:
+      span.content-info= user.gender
+      span.content-title Telefon Numarası:
+      span.content-info= user.phone
+      span.content-title Doğum Yılı:
+      span.content-info= user.birth_year
+      span.content-title Toplam Bakiye:
+      span.content-info #{user.overall_credit}₺
+      span.content-title Bekleyen Bakiye:
+      span.content-info #{user.waiting_credit}₺
+      span.content-title Bakiye:
+      span.content-info #{user.credit}₺
+      span.content-title Papara Numarası
+      span.content-info= user.payment_number ? user.payment_number : '-'
+      span.content-main-title Kampanya Geçmişi:
+      each campaign in user.campaigns
+        .each-campaign-wrapper
+          span.campaign-title= campaign.name
+          span.campaign-description= campaign.description
+          span.campaign-status Kampanya Durumu: #{campaign.status}
+          each question, i in campaign.questions
+            .each-question
+              span.question-text= question.text
+              if question.type == 'short_text'
+                input.each-input(type="text" id=i placeholder="Cevabınız" value=campaign.answers[i])
+              else if question.type == 'long_text'
+                textarea.each-input-long(type="text" rows="5" id=i placeholder="Cevabınız")= campaign.answers[i]
+              else if question.type == 'radio'
+                each choice in question.choices
+                  if choice == campaign.answers[i]
+                    label.each-choice-wrapper
+                      input.each-choice-input(type="radio" name="question-" + i id=i value=choice checked)
+                      span.each-choice-text= choice
+                  else
+                    label.each-choice-wrapper
+                      input.each-choice-input(type="radio" name="question-" + i id=i value=choice)
+                      span.each-choice-text= choice
+              else if question.type == 'checked'
+                each choice in question.choices
+                  if campaign.answers[i].includes(choice)
+                    label.each-choice-wrapper
+                      input.each-choice-input(type="checkbox" id=i value=choice checked)
+                      span.each-choice-text= choice
+                  else
+                    label.each-choice-wrapper
+                      input.each-choice-input(type="checkbox"  id=i value=choice)
+                      span.each-choice-text= choice

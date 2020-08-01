@@ -1,0 +1,51 @@
+extends ./../partials/head
+block content
+  input.display-none#user-object(type="text" value=JSON.stringify(user))
+  .all-wrapper
+    form.payment-number-wrapper(action="/profile/payment" method="POST")
+      span.payment-title Papara Numarası
+      span.payment-subtitle Lütfen ödemenizi yapabilmemiz için bir Papara hesap numarası girin. Girdiğiniz bu numarayı daha sonra değiştiremezsiniz. Eğer herhangi bir sorunuz olursa temsilcilerimiz ile konuşabilirsiniz.
+      input.each-input(type="text" placeholder="Papara Numarası" name="payment_number")
+      button.payment-send-button
+        span Gönder
+      span.close-payment-button Vazgeç
+    .all-header
+      .all-header-menu-wrapper
+        a.each-header-menu(href="/history")
+          i.fas.fa-tasks
+        a.each-header-menu(href="/campaigns")
+          i.fas.fa-home
+        a.each-header-menu.selected(href="/profile")
+          i.fas.fa-user
+    .all-content
+      form.all-content-inner-wrapper(action="/profile" method="POST")
+        img.content-logo(src="/res/images/logo_black.png" alt="usersmagic")
+        span.user-name= user.name
+        span.user-info #{user.email}, #{user.birth_year}
+        span.credit-info Toplam Bakiye: #{user.overall_credit}₺ Bekleyen Bakiye: #{user.waiting_credit}₺
+        span.credit-wrapper
+          span.credit-text Bakiye:
+          span
+            span.credit #{user.credit}
+            span.currency ₺
+        if payment_error
+          span.payment-error= payment_error
+        .get-credit-button
+          span.get-credit-button-text Para Çek
+        if user.payment_number
+          span.user-payment-number Papara Numarası: #{user.payment_number}
+        a.logout-button(href="/profile/logout") Çıkış Yap
+        input.each-input(type="text" placeholder="Ad Soyad" value=user.name name="name" required autocomplete="off")
+        input.each-input(type="text" placeholder="Telefon Numarası" value=user.phone name="phone" required autocomplete="off")
+        button.send-button
+          span Düzenle
+        span.user-info
+          span Kullanım haklarınız ve veri güvenliğiniz ile ilgili sorularınız için Gizlik Sözleşmemizi ve Kullanıcı Sözleşmemizi okuyabilirsiniz:
+          a(href="/agreement/privacy") Gizlilik Sözleşmesi
+          span /
+          a(href="/agreement/user") Kullanıcı Sözleşmesi
+        span.user-info
+          span Eğer sunduğumuz servisler ile ilgili herhangi bir sorunuz olursa bize
+          a yunusguerlek@gmail.com
+          span e-posta adresinden erişebilirsiniz. Size bir hafta içinde geri dönüş yapacağız.
+        .empty-space

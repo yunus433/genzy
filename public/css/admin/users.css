@@ -1,0 +1,74 @@
+.admin-all-content {
+  display: flex;
+  flex-direction: column;
+}
+.display-none {
+  display: none;
+}
+
+.all-content-header {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(236, 236, 236);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 150%;
+  color: rgb(112, 112, 112);
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}
+
+.all-content-inner-wrapper {
+  flex: 7;
+  padding: 0px 20px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.users-wrapper {
+  width: 100%;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.each-user {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+}
+.each-user-name {
+  color: rgb(112, 112, 112);
+  margin-left: 10px;
+  font-size: 100%;
+  font-weight: 500;
+}
+.each-user-email {
+  color: rgb(112, 112, 112);
+  margin-left: 10px;
+  font-size: 100%;
+  font-weight: 300;
+}
+.each-button {
+  margin-left: 10px;
+  text-decoration: none;
+  color: rgba(112, 112, 112, 0.5);
+}
+.each-button:hove {
+  color: rgb(112, 112, 112);
+}

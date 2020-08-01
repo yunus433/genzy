@@ -1,0 +1,14 @@
+extends ./../partials/head
+block content
+  form.all-wrapper(method="POST" action="/auth/login")
+    .all-inner-wrapper
+      span.logo-name GENZY
+      input.each-input(type="email" placeholder="E-Posta" name="email" required autofocus autocomplete="off")
+      input.each-input(type="password" placeholder="Şifre" name="password" required autocomplete="off")
+      button.send-button
+        span Giriş Yap
+      .register-link-wrapper
+        span.register-text Üye değil misin?
+        a.register-link(href="/auth/register") Üye Ol
+    .bottom-wrapper
+      span.copyright-text Copyright 2020 - Loy Yazılım

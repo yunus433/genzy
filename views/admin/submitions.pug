@@ -1,0 +1,23 @@
+extends ../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title= campaign.name
+      span.subtitle Bu sayfadan bu kampanyaya gelen başvuruları görebilir, onay verebilir veya reddebilirsiniz. Eğer reddederseniz bir sebep yazmalısınız.
+  .all-content-inner-wrapper
+    .submitions-wrapper
+      each submition in submitions
+        .each-submition-wrapper
+          span.submition-title Bilgiler:
+          span.submition-user-info Ad Soyad: #{submition.user.name}
+          span.submition-user-info Doğum Tarihi: #{submition.user.birth_year}
+          span.submition-user-info Cinsiyet: #{submition.user.gender}
+          span.submition-user-info E-Posta: #{submition.user.email}
+          span.submition-user-info Telefon Numarası: #{submition.user.phone}
+          span.submition-title Cevaplar:
+          each answer, i in submition.answers
+            span.each-answer #{i+1}. #{Array.isArray(answer) ? answer.join(' / ') : answer}
+          form.reject-form(action=`/admin/submitions/reject?id=${campaign._id.toString()}&user=${submition.user._id.toString()}` method="POST")
+            input.each-input(type="text" placeholder="Red Sebebi" name="reason" required)
+            button.reject-button Reddet
+            a.approve-button(href=`/admin/submitions/approve?id=${campaign._id.toString()}&user=${submition.user._id.toString()}`) Onayla

@@ -1,0 +1,109 @@
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-name {
+  color: rgb(30, 30, 30);
+  font-weight: 800;
+  font-size: 200%;
+  margin-bottom: 15px;
+}
+
+.each-input {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(30, 30, 30);
+  font-size: 100%;
+  padding: 15px 20px;
+  width: 25vw;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.send-button {
+  height: 60px;
+  padding: 0px 40px;
+  background-color: rgb(240, 84, 79);
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(240, 84, 79, 0.5);
+}
+.send-button:hover {
+  box-shadow: 0 0 23px rgba(240, 84, 79, 0.6);
+}
+.send-button span {
+  color: rgb(254, 254, 254);
+  font-weight: 700;
+  font-size: 150%;
+}
+
+.bottom-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 20px;
+  width: 100%;
+}
+.brand-wrapper {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.brand-logo {
+  height: 30px;
+  width: auto;
+}
+.brand-text {
+  color: rgb(30, 30, 30);
+  font-weight: 600;
+  font-size: 75%;
+  margin-left: 5px;
+}
+.copyright-text {
+  margin-right: 20px;
+  color: rgb(30, 30, 30);
+  font-weight: 300;
+  font-size: 75%;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+  .each-input {
+    width: 30vw;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+  .each-input {
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 700px) and (min-width: 600px) {
+  .each-input {
+    width: 45vw;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 450px) {
+  .each-input {
+    width: 55vw;
+  }
+}
+@media only screen and (max-width: 450px) and (min-width: 300px) {
+  .each-input {
+    width: 80vw;
+  }
+}

@@ -1,0 +1,13 @@
+extends ../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title Ödemeler
+      span.subtitle Bu sayfadan gelen para çekme isteklerini ve Papara numaralarını görebilirsiniz. Bir ödemeyi tamamlayınca onaylandı tuşuna tıklayın.
+  .all-content-inner-wrapper
+    .payments-wrapper
+      each payment in payments
+        .each-payment
+          span.payment-number Papara Numarası: #{payment.payment_number}
+          span.payment-amount #{payment.amount}₺
+          a.approve-button(href=`/admin/payments/approve?id=${payment._id.toString()}&user_id=${payment.user_id.toString()}&amount=${payment.amount}`) Onayla

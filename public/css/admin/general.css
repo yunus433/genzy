@@ -1,0 +1,33 @@
+.admin-all-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-left-side-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  border-right: 2px solid rgb(236, 236, 236);
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.admin-left-side-header span {
+  margin-bottom: 10px;
+  color: rgb(112, 112, 112);
+  font-weight: 700;
+}
+.admin-left-side-header a {
+  text-decoration: none;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+  height: 15px;
+}
+.admin-left-side-header a:hover {
+  text-decoration: underline;
+}
+
+.admin-all-content {
+  flex: 4;
+}

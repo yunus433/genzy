@@ -1,0 +1,79 @@
+.admin-all-content {
+  display: flex;
+  flex-direction: column;
+}
+.display-none {
+  display: none;
+}
+
+.all-content-header {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(236, 236, 236);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 150%;
+  color: rgb(112, 112, 112);
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}
+.new-campaign-button {
+  padding: 10px 50px;
+  background-color: rgb(248, 248, 248);
+  border: 2px solid rgb(236, 236, 236);
+  color: rgb(112, 112, 112);
+  font-size: 200%;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.all-content-inner-wrapper {
+  flex: 7;
+  padding: 0px 20px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.payments-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+}
+.each-payment {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.payment-number {
+  font-size: 100%;
+  font-weight: 300;
+  color: rgb(112, 112, 112);
+  margin-right: auto;
+}
+.payment-amount {
+  font-size: 100%;
+  font-weight: 700;
+  color: red;
+  margin-right: 10px;
+}
+.approve-button {
+  text-decoration: none;
+  color: green;
+  font-weight: 700;
+}

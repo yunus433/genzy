@@ -1,0 +1,18 @@
+.admin-all-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.admin-all-content span {
+  margin: 10px 20px;
+  text-align: center;
+}
+.admin-all-content a {
+  padding: 10px;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  margin-top: 15px;
+  border-radius: 15px;
+}

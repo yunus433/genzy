@@ -1,0 +1,15 @@
+extends ./../partials/head
+block content
+  form.all-wrapper(method="POST" action="/auth/complete")
+    .all-inner-wrapper
+      span.logo-name GENZY
+      input.each-input(type="text" placeholder="Ad Soyad" name="name" required autocomplete="off")
+      input.each-input(type="phone" placeholder="Telefon Numarası" name="phone" required autocomplete="off")
+      input.each-input(type="text" placeholder="Cinsiyet" name="gender" required autocomplete="off")
+      input.each-input(type="number" placeholder="Doğum Yılı" name="birth_year" required autocomplete="off")
+      if error
+        span.error-text= error
+      button.send-button
+        span Hesabını Tamamla
+    .bottom-wrapper
+      span.copyright-text Copyright 2020 - Loy Yazılım

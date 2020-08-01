@@ -1,0 +1,117 @@
+.admin-all-content {
+  display: flex;
+  flex-direction: column;
+}
+.display-none {
+  display: none;
+}
+
+.all-content-header {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(236, 236, 236);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 150%;
+  color: rgb(112, 112, 112);
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}
+.new-campaign-button {
+  padding: 10px 50px;
+  background-color: rgb(248, 248, 248);
+  border: 2px solid rgb(236, 236, 236);
+  color: rgb(112, 112, 112);
+  font-size: 200%;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.all-content-inner-wrapper {
+  flex: 7;
+  padding: 0px 20px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.submitions-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+}
+.each-submition-wrapper {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.submition-title {
+  color: rgb(112, 112, 112);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.submition-user-info {
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.each-answer {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}
+.reject-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 10px;
+}
+.each-input {
+  margin-right: 10px;
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(112, 112, 112);
+}
+.reject-button {
+  margin-right: 10px;
+  color: red;
+  padding: 10px;
+  background-color: rgb(254, 254, 254);
+  border: 2px solid red;
+  outline: none;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 100%;
+  cursor: pointer;
+}
+.approve-button {
+  margin-right: 10px;
+  color: green;
+  padding: 10px;
+  background-color: rgb(254, 254, 254);
+  border: 2px solid green;
+  outline: none;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 100%;
+}

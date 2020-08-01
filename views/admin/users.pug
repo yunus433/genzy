@@ -1,0 +1,18 @@
+extends ../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title Kullanıcılar
+      span.subtitle Bu sayfadan kayıtlı kullanıcıları görebilir, düzenleyebilir, silebilir veya detaylarını görüntüleyebilirsiniz.
+  .all-content-inner-wrapper
+    .users-wrapper
+      each user in users
+        .each-user
+          span.each-user-name= user.name
+          span.each-user-email (#{user.email})
+          a.each-button(href="/admin/users/details?id=" + user._id.toString() style="margin-left: auto !important;" )
+            i.fas.fa-info
+          a.each-button(href="/admin/users/edit?id=" + user._id.toString())
+            i.fas.fa-cog
+          a.each-button(href="/admin/users/delete?id=" + user._id.toString() onclick="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?')")
+            i.fas.fa-trash

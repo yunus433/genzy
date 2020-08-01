@@ -1,0 +1,71 @@
+extends ../partials/adminHeader
+block main
+  .all-content-header
+    .title-wrapper
+      span.title Kampanyalar
+      span.subtitle Bu sayfadan eklediğiniz kampanyaları görebilir, düzenleyebilir, silebilir, kampanyalara gelen başvuruları görebilir ve yeni kampanyalar yaratabilirsiniz.
+    .new-campaign-button
+      span +
+  .all-content-inner-wrapper
+    .campaigns-wrapper
+      each campaign in campaigns 
+        .each-campaign
+          .campaign-photo-wrapper
+            img.each-campaign-photo(src=campaign.photo)
+          span.each-campaign-name= campaign.name
+          span.each-campaign-name (#{campaign.accepted_submitions.length} onaylanmış başvuru) #{campaign.ended ? "(Silindi)" : ""}
+          a.campaign-applications-button(href=`/admin/submitions?id=${campaign._id.toString()}`)
+            i.fas.fa-list-ul
+          a.campaign-delete-button(href="/admin/campaigns/details?id=" + campaign._id.toString())
+            i.fas.fa-cog
+          a.campaign-delete-button(href="/admin/campaigns/results?id=" + campaign._id.toString())
+            i.fas.fa-chart-bar
+          a.campaign-delete-button(href="/admin/campaigns/delete?id=" + campaign._id.toString() onclick="return confirm('Bu kampanyayı silmek istediğinize emin misiniz?')")
+            i.fas.fa-trash
+  form.new-form-wrapper(action="/admin/campaigns" method="POST" enctype="multipart/form-data")
+    .form-inner-wrapper
+      span.form-title Yeni Bir Kampanya Ekle
+      span.form-subtitle Kampanya İsmi: *
+      input.form-input(type="text" placeholder="İsim" name="name" required)
+      span.form-subtitle Kampanya Açıklaması: *
+      input.form-input(type="text" placeholder="Açıklama" name="description" required)
+      span.form-subtitle Kampanya Fiyatı: *
+      input.form-input(type="number" placeholder="Fiyat ₺" name="price" required)
+      span.form-subtitle Kişi Sayısı: *
+      input.form-input(type="number" placeholder="Kişi Sayısı" name="participant_number" required)
+      span.form-subtitle Kampanya Resmi: *
+      input.form-input(type="file" name="file" required)
+      span.form-subtitle Gereken Cinsiyet: (Yoksa boş bırakın)
+      input.form-input(type="text" placeholder="ör: kadın / erkek" name="gender")
+      span.form-subtitle Min Doğum Yılı: (Yoksa boş bırakın)
+      input.form-input(type="number" placeholder="ör: 1920" name="min_birth_year")
+      span.form-subtitle Max Doğum Yılı: (Yoksa boş bırakın)
+      input.form-input(type="number" placeholder="ör: 2020" name="max_birth_year")
+      input.display-none#campaign-questions-input(type="text" value="" name="questions")
+      span.form-subtitle Kampanya Soruları
+      .questions-wrapper
+      span.form-subtitle Soru Ekle:
+      .questions-wrapper
+        .each-question
+          span.form-subtitle Soru Metni
+          input.form-input#question-text-input(type="text" placeholder="Soru")
+          span.form-subtitle Soru Tipi
+          .type-wrapper
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="short_text")
+              span.each-radio-input-text Kısa Yazılı
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="long_text")
+              span.each-radio-input-text Uzun Yazılı
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="radio")
+              span.each-radio-input-text Tek Seçmeli
+            label.each-radio-input-wrapper
+              input.question-type-input(type="radio" name="type" value="checked")
+              span.each-radio-input-text Çok Seçmeli
+          span.form-subtitle Cevaplar (Lütfen sadece soru tipiniz tek seçmeli ya da çok seçmeli ise girin. Cevapların arasına virgül koymanız gerekmektedir.)
+          input.form-input#question-choices-input(type="text" placeholder="ör: Cevap 1, Cevap 2, Cevap 3")
+        .add-question-button Soru Ekle
+      .buttons-wrapper
+        .back-button Geri
+        button.form-button Oluştur

@@ -1,0 +1,68 @@
+extends ./../partials/head
+block content
+  .all-wrapper
+    .all-header
+      .all-header-menu-wrapper
+        a.each-header-menu.selected(href="/history")
+          i.fas.fa-tasks
+        a.each-header-menu(href="/campaigns")
+          i.fas.fa-home
+        a.each-header-menu(href="/profile")
+          i.fas.fa-user
+    .all-content
+      if campaigns.length
+        .all-content-inner-wrapper
+          each campaign in campaigns
+            if campaign.status == "saved"
+              .campaign-outer-wrapper
+                .campaign-wrapper
+                  .campaign-photo-wrapper
+                    img.campaign-photo(src=campaign.photo alt=campaign.name)
+                  .campaign-info-wrapper
+                    span.campaign-name= campaign.name
+                    span.campaign-description= campaign.error ? campaign.error : campaign.description
+                    .campaign-price-wrapper
+                      span.campaign-price-text Kazanacağın:
+                      span.campaign-price #{campaign.price}₺
+                    a.campaign-join-button(href="/test?id=" + campaign._id.toString())
+                      span.campaign-join-text Devam Et
+            else if campaign.status == "waiting"
+              .campaign-outer-wrapper
+                .campaign-wrapper
+                  .campaign-photo-wrapper
+                    img.campaign-photo(src=campaign.photo alt=campaign.name)
+                  .campaign-info-wrapper
+                    span.campaign-name= campaign.name
+                    span.campaign-description= campaign.description
+                    .campaign-price-wrapper
+                      span.campaign-price-text Kazanacağın:
+                      span.campaign-price #{campaign.price}₺
+                    span.campaign-info-text Onay bekliyor...
+            else if campaign.status == "approved"
+              .campaign-outer-wrapper
+                .campaign-wrapper
+                  .campaign-photo-wrapper
+                    img.campaign-photo(src=campaign.photo alt=campaign.name)
+                  .campaign-info-wrapper
+                    span.campaign-name= campaign.name
+                    span.campaign-description= campaign.description
+                    .campaign-price-wrapper
+                      span.campaign-price-text Kazanacağın:
+                      span.campaign-price #{campaign.price}₺
+                    span.campaign-info-text Cevapların onaylandı, bakiyeni profil sayfanda görebilirsin!
+            else if campaign.status == "unapproved"
+              .campaign-outer-wrapper
+                .campaign-wrapper
+                  .campaign-photo-wrapper
+                    img.campaign-photo(src=campaign.photo alt=campaign.name)
+                  .campaign-info-wrapper
+                    span.campaign-name= campaign.name
+                    span.campaign-error= campaign.error
+                    .campaign-price-wrapper
+                      span.campaign-price-text Kazanacağın:
+                      span.campaign-price #{campaign.price}₺
+                    a.campaign-join-button(href="/test?id=" + campaign._id.toString())
+                      span.campaign-join-text Yeniden Doldur
+        .empty-space
+      else
+        span.no-campaign-text Henüz hiçbir kampanyaya katılmamışsın.

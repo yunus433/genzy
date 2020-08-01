@@ -1,0 +1,142 @@
+.admin-all-content {
+  display: flex;
+  flex-direction: column;
+}
+.display-none {
+  display: none;
+}
+
+.all-content-header {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(236, 236, 236);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 150%;
+  color: rgb(112, 112, 112);
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}
+
+.all-content-inner-wrapper {
+  flex: 7;
+  padding: 0px 20px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.info-wrapper {
+  min-height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-main-title {
+  color: rgb(112, 112, 112);
+  font-size: 125%;
+  margin-top: 30px;
+  font-weight: 700;
+}
+.content-title {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 600;
+  margin-top: 20px;
+}
+.content-info {
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.each-campaign-wrapper {
+  padding: 20px;
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  border-radius: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.campaign-title {
+  color: rgb(112, 112, 112);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.campaign-description {
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.campaign-status {
+  font-weight: 600;
+  color: rgb(112, 112, 112);
+  font-size: 100%;
+  margin-bottom: 30px;
+}
+.each-question {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.question-text {
+  margin-bottom: 10px;
+  color: rgb(112, 112, 112);
+  font-weight: 600;
+}
+.each-input {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(112, 112, 112);
+  font-size: 100%;
+  padding: 15px 20px;
+  width: 50%;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 30px;
+}
+.each-input-long {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(112, 112, 112);
+  font-size: 100%;
+  padding: 15px;
+  width: 50%;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 15px;
+}
+.each-choice-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.each-choice-wrapper input {
+  margin-right: 10px;
+}
+.each-choice-wrapper input:checked {
+  background-color: rgb(240, 84, 79);
+}
+.each-choice-wrapper span {
+  color: rgb(112, 112, 112);
+  font-weight: 300;
+}

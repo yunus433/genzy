@@ -1,0 +1,147 @@
+.all-wrapper {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+  height: 100vh;
+}
+.all-inner-wrapper {
+  min-height: fit-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+} 
+
+.go-back-link {
+  color: rgb(111, 74, 193);
+  font-weight: 600;
+  font-size: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.go-back-link i {
+  margin-right: 5px;
+}
+
+.test-title {
+  color: rgb(50, 50, 50);
+  font-weight: 700;
+  font-size: 175%;
+  margin-bottom: 10px;
+}
+.test-info {
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+  font-size: 100%;
+  margin-bottom: 20px;
+}
+
+.each-question {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.question-text {
+  margin-bottom: 10px;
+  color: rgb(50, 50, 50);
+  font-weight: 600;
+}
+.each-input {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(50, 50, 50);
+  font-size: 100%;
+  padding: 15px 20px;
+  width: 50%;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 30px;
+}
+.each-input-long {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(50, 50, 50);
+  font-size: 100%;
+  padding: 15px;
+  width: 50%;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 15px;
+}
+.each-choice-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.each-choice-wrapper input {
+  margin-right: 10px;
+}
+.each-choice-wrapper input:checked {
+  background-color: rgb(111, 74, 193);
+}
+.each-choice-wrapper span {
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+}
+
+.buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.save-button {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgba(80, 177, 238, 0.5);
+  color: rgb(111, 74, 193);
+  font-weight: 700;
+  height: 60px;
+  border-radius: 30px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+.save-button:hover {
+  border-color: rgb(111, 74, 193);
+}
+.submit-button {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgba(111, 74, 193, 0.5);
+  color: rgb(111, 74, 193);
+  font-weight: 700;
+  height: 60px;
+  border-radius: 30px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+  outline: none;
+}
+.submit-button:hover {
+  border-color: rgb(111, 74, 193);
+}
+
+@media only screen and (max-width: 650px) and (min-width: 300px) {
+  .each-input, .each-input-long {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 300px) {
+  .all-inner-wrapper {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,13 @@
+extends ./head
+block content
+  .admin-all-wrapper
+    .admin-left-side-header
+      span Sayfalar:
+      .admin-each-header-button
+        a(href="/admin/campaigns") Kampanyalar
+      .admin-each-header-button
+        a(href="/admin/payments") Ödemeler
+      .admin-each-header-button
+        a(href="/admin/users") Kullanıcılar
+    .admin-all-content
+      block main

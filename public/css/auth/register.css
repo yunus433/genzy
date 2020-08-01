@@ -1,0 +1,157 @@
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.all-inner-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-name {
+  color: rgb(50, 50, 50);
+  font-weight: 800;
+  font-size: 200%;
+  margin-bottom: 15px;
+}
+
+.brand-wrapper {
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 100%;
+}
+.brand-text {
+  color: rgb(50, 50, 50);
+  font-weight: 600;
+  font-size: 75%;
+  text-decoration: none;
+}
+
+
+.each-input {
+  background-color: rgb(254, 254, 254);
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px;
+  color: rgb(50, 50, 50);
+  font-size: 100%;
+  padding: 15px 20px;
+  width: 25vw;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.error-text {
+  color: rgb(111, 74, 193);
+  font-weight: 600;
+  font-size: 100%;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.send-button {
+  height: 60px;
+  padding: 0px 40px;
+  background-color: rgb(111, 74, 193);
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(111, 74, 193, 0.5);
+}
+.send-button:hover {
+  box-shadow: 0 0 23px rgba(111, 74, 193, 0.6);
+}
+.send-button span {
+  color: rgb(254, 254, 254);
+  font-weight: 700;
+  font-size: 150%;
+}
+
+.agreement-text {
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+  font-size: 100%;
+  margin-bottom: 20px;
+}
+.agreement-text a {
+  color: rgb(111, 74, 193);
+  margin: 0px 5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.agreement-text a:hover {
+  text-decoration: underline;
+}
+
+.register-link-wrapper {
+  display: flex;
+  align-items: center;
+}
+.register-text {
+  color: rgb(50, 50, 50);
+  font-weight: 500;
+  font-size: 100%;
+}
+.register-link {
+  color: rgb(111, 74, 193);
+  font-weight: 700;
+  font-size: 100%;
+  margin-left: 5px;
+  text-decoration: none;
+}
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.bottom-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  min-height: fit-content;
+  width: 100%;
+}
+.copyright-text {
+  margin-right: 20px;
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+  font-size: 75%;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 900px) {
+  .each-input {
+    width: 30vw;
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+  .each-input {
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 700px) and (min-width: 600px) {
+  .each-input {
+    width: 45vw;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 450px) {
+  .each-input {
+    width: 55vw;
+  }
+}
+@media only screen and (max-width: 450px) and (min-width: 300px) {
+  .each-input {
+    width: 80vw;
+  }
+}
